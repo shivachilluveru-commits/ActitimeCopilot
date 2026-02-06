@@ -3,11 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="ActitimeLoginPackage.Login">
+      <class name="tests.LoginTest">
         <methods>
-          <include name="loginToActitime"/>
+          <include name="testValidLogin"/>
+          <include name="tearDownTest"/>
+          <include name="setUpTest"/>
         </methods>
-      </class> <!-- ActitimeLoginPackage.Login -->
+      </class> <!-- tests.LoginTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

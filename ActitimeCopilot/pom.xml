@@ -3,11 +3,11 @@
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
-  <groupId>Actitime</groupId>
-  <artifactId>SeleniumActitime_Copilot</artifactId>
+  <groupId>actitimeTrack</groupId>
+  <artifactId>ActitimeCopilot</artifactId>
   <version>0.0.1-SNAPSHOT</version>
 
-  <name>SeleniumActitime_Copilot</name>
+  <name>ActitimeCopilot</name>
   <!-- FIXME change it to the project's website -->
   <url>http://www.example.com</url>
 
@@ -21,18 +21,20 @@
   </dependencyManagement>
 
   <dependencies>
-    <!-- TestNG dependency -->
+    <dependency>
+      <groupId>org.seleniumhq.selenium</groupId>
+      <artifactId>selenium-java</artifactId>
+      <version>4.20.0</version>
+    </dependency>
+    <dependency>
+      <groupId>io.github.bonigarcia</groupId>
+      <artifactId>webdrivermanager</artifactId>
+      <version>5.8.0</version>
+    </dependency>
     <dependency>
       <groupId>org.testng</groupId>
       <artifactId>testng</artifactId>
       <version>7.9.0</version>
-      <scope>test</scope>
-    </dependency>
-    <!-- Selenium WebDriver dependency -->
-    <dependency>
-      <groupId>org.seleniumhq.selenium</groupId>
-      <artifactId>selenium-java</artifactId>
-      <version>4.16.1</version>
     </dependency>
   </dependencies>
 
