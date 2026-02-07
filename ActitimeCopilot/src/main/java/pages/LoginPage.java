@@ -10,6 +10,12 @@ public class LoginPage {
     private By passwordField = By.name("pwd");
     private By loginButton = By.id("loginButton");
 
+    // Locators for task creation (POM style)
+    private By tasksMenu = By.id("tasksMenu");
+    private By createTaskButton = By.id("createTaskButton");
+    private By taskNameField = By.name("taskName");
+    private By saveTaskButton = By.id("saveTaskButton");
+
     public LoginPage(WebDriver driver) {
         this.driver = driver;
     }
@@ -30,5 +36,12 @@ public class LoginPage {
         enterUsername(username);
         enterPassword(password);
         clickLogin();
+    }
+    
+    public void createTask(String taskName) {
+        driver.findElement(tasksMenu).click();
+        driver.findElement(createTaskButton).click();
+        driver.findElement(taskNameField).sendKeys(taskName);
+        driver.findElement(saveTaskButton).click();
     }
 }
