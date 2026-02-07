@@ -11,10 +11,10 @@ public class LoginPage {
     private By loginButton = By.id("loginButton");
 
     // Locators for task creation (POM style)
-    private By tasksMenu = By.id("tasksMenu");
+    private By tasksMenu = By.xpath("//*[@id=\"topnav\"]/tbody/tr[1]/td[5]/a/img");
     private By createTaskButton = By.id("createTaskButton");
     private By taskNameField = By.name("taskName");
-    private By saveTaskButton = By.id("saveTaskButton");
+    private By saveTaskButton = By.id("saveTaskButton"); 
 
     public LoginPage(WebDriver driver) {
         this.driver = driver;
@@ -38,10 +38,18 @@ public class LoginPage {
         clickLogin();
     }
     
-    public void createTask(String taskName) {
+    public void createTask (String taskName) {
         driver.findElement(tasksMenu).click();
+        setImplicitWait(driver, 20); // Wait for the tasks page to load
         driver.findElement(createTaskButton).click();
+        setImplicitWait(driver, 20); // Wait for the create task form to appear
         driver.findElement(taskNameField).sendKeys(taskName);
+        setImplicitWait(driver, 20); // Wait for the task name to be entered
         driver.findElement(saveTaskButton).click();
     }
+
+	private void setImplicitWait(WebDriver driver2, int i) {
+		// TODO Auto-generated method stub
+		
+	}
 }
